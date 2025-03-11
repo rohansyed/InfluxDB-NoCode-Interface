@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+.nav {
+    background-color: #E4E4E4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    position: fixed;
+    border: solid rgb(153, 153, 223);
+    top: 0;
+    width: 90vw;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.influx {
+    font-size: 24px;
+    font-weight: bold;
+
+    background: linear-gradient(-45deg,
+            #4b0082,
+            #6a0dad,
+            #8a2be2,
+            #b57edc,
+            #e73c7e,
+            #ff69b4);
+    background-size: 500% 500%;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}

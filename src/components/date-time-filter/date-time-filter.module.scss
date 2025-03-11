@@ -1,0 +1,77 @@
+.heading {
+    text-decoration: underline;
+}
+
+.filterContainer {
+    margin-top: 0;
+}
+
+.startDateContainer,
+.endDateContainer {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(100, 108, 255, 0.5);
+    border-radius: 4rem;
+    padding: 10px;
+    margin-bottom: 20px;
+
+    :global(.rdt) {
+        position: relative;
+
+        input {
+            width: 150px;
+            border-radius: 5px;
+            border: none;
+            padding: 5px;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+
+        ;
+    }
+
+    :global(.rdtPicker) {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-75%);
+        width: 200px;
+        font-size: 14px;
+        z-index: 1000;
+    }
+
+    :global(.rdtOpen .rdtPicker) {
+        display: block;
+
+    }
+
+    :global(.rdtPicker td),
+    :global(.rdtPicker th) {
+        height: 24px;
+        font-size: 12px;
+    }
+
+}
+
+.generateButton {
+    display: flex;
+    background-color: rgba(232, 22, 148, 255);
+    color: white;
+    border-radius: 4rem;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+
+.customDateInput {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+.generateButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}

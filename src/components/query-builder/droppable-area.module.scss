@@ -1,0 +1,17 @@
+.droppableArea {
+    padding: 10px;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.isNotOver {
+    border: 3px dashed white;
+    color: white;
+}
+
+.isOver {
+    border: 3px dashed lightgreen;
+    color: lightgreen;
+}

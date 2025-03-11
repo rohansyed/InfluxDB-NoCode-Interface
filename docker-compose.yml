@@ -1,0 +1,43 @@
+# docker-compose.yml
+
+version: '3.8'
+
+services:
+  influxdb:
+    image: influxdb:2.7
+    container_name: influxdb
+    ports:
+      - "8086:8086"
+    volumes:
+      - influxdb-data:/var/lib/influxdb2
+      - influxdb-config:/etc/influxdb2
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: rohansyed
+      DOCKER_INFLUXDB_INIT_PASSWORD: avengersassemble
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: ZyspHZxwrPhVqlm6FRdUsAWSkxES8EYK3efU1YxZg4zteSjKCvbtdNA3sVW9Gy7P19m0T0NRBSrC3rjOQZQQeA==
+      DOCKER_INFLUXDB_INIT_ORG: UG02
+      DOCKER_INFLUXDB_INIT_BUCKET: exclusive_bucket
+    
+  app:
+    build:
+      context: .
+    container_name: app
+    ports:
+      - "3001:3001"
+      - "5173:5173"
+    environment:
+      INFLUXDB_USERNAME: rohansyed
+      INFLUXDB_URL: http://influxdb:8086
+      INFLUXDB_TOKEN: ZyspHZxwrPhVqlm6FRdUsAWSkxES8EYK3efU1YxZg4zteSjKCvbtdNA3sVW9Gy7P19m0T0NRBSrC3rjOQZQQeA==
+      INFLUXDB_ORG: UG02
+      INFLUXDB_BUCKET: exclusive_bucket
+    volumes:
+      - ./src:/usr/src/app/src  # Mounting the source code for live reloading
+      - ./public:/usr/src/app/public  # Also mounting public ASSets
+    depends_on:
+      - influxdb
+
+volumes:
+  influxdb-data:
+  influxdb-config:

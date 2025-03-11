@@ -1,0 +1,43 @@
+.previewBoxContainer {
+    width: 100%;
+    height: 50%;
+    border: 2px solid white;
+    border-radius: 12px;
+}
+
+.previewHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 5px;
+    padding-top: 5px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.heading {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0
+}
+
+.previewBox {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 10px 10px 10px;
+    padding: 0;
+    background-color: white;
+    height: 200px;
+    width: 45rem;
+    overflow: scroll;
+}
+
+h4 {
+    padding: 0;
+    margin: 0;
+}
+
+pre {
+    margin-left: 0;
+    margin-top: 0;
+}
